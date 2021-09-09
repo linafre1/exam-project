@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>SideMenuFragment</title>
+    <link rel="stylesheet" type="text/css" th:href="${'/layout.css'}" href="../static/layout.css">
+</head>
+<body>
+<div class="friend" th:fragment="friendFragment">
+    <h3 class="component-header">Social Panel</h3>
+    <div class="friends">
+        <div class="friend-header">Friends</div>
+        <div class="friend-formatter">
+            <div class="friend-item" th:each="user : ${session.user?.friends?.values()}">
+                <div class="friend-image"></div>
+                <div><a th:href="${'/getSummaryForUser?userId=' + user.id}" th:text="${user.firstName + ' ' + user.lastName}"></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="friend-requests">
+        <div class="friend-request-header">Friend Requests</div>
+        <div class="friend-request-formatter" th:each="user : ${session.user?.friendRequests?.values()}">
+            <div class="friend-image"></div>
+            <div><a th:href="${'/getSummaryForUser?userId=' + user.id}" th:text="${user.firstName + ' ' + user.lastName}">Friend1</a></div>
+            <div class="yes"><a th:href="${'/friendRequest?friendId=' + user.id + '&accept=true'}" th:text="${'Accept'}"></a></div>
+            <div class="no"><a th:href="${'/friendRequest?friendId=' + user.id + '&accept=false'}" th:text="${'Decline'}"></a></div>
+        </div>
+    </div>
+    <div class="all-users">
+        <div class="user-header">Users</div>
+        <div class="user-formatter" th:each="user : ${session.allUsers}">
+            <div class="friend-image"></div>
+            <div><a th:href="${'/getSummaryForUser?userId=' + user.id}" th:text="${user.firstName + ' ' + user.lastName}">Friend1</a></div>
+            <div class="yes"><a th:href="${'/sendFriendRequest?friendId=' + user.id}" th:text="${'Send Friend Request'}"></a></div>
+            <div class="no"><a th:href="${'/user?userId=' + user.id}" th:text="${'Morph'}"></a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

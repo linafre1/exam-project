@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="${'/layout.css'}" href="../static/layout.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/content.css'}" href="../static/content.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/challenges.css'}" href="../static/challenges.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/banner.css'}" href="../static/banner.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/header.css'}" href="../static/header.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/menu.css'}" href="../static/menu.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/form.css'}" href="../static/form.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Log Activity</title>
+
+</head>
+<body>
+<div class="header" th:replace="headerFragment :: headerFragment">
+    Header
+</div>
+
+<div class="menu" th:replace="menuFragment :: menuFragment">
+    Menu
+</div>
+<div class="centered">
+    <div class="form log-in">
+        <h1>Become a member</h1>
+            <form class="signup" action="/signup" method="post">
+                <label class="label"> User name : <input class="input-window" type="text" name="alias"/> </label>
+                <label class="label"> Email address : <input class="input-window" type="text" name="email"/> </label>
+                <label class="label"> Password: <input class="input-window" type="password" name="password"/> </label>
+                <label class="label"> First name : <input class="input-window" type="text" name="firstName"/> </label>
+                <label class="label"> Last name : <input class="input-window" type="text" name="lastName"/> </label>
+
+                <input class="crate-user-button" type="submit" value="Create user">
+            </form>
+        <a href="/"><button class="back-button">Back</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.menu a {
+    text-decoration: none;
+    color: #242628;
+    font-family: 'Orbitron', sans-serif;
+    /*font-family: "Roboto Light";*/
+    font-size: 20px;
+}
+.menu-wrapper {
+    display: flex;
+    max-width:1470px;
+    width:100%;
+    justify-content: space-between;
+    align-items:center;
+}
+.menu {
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+}
+
+.menu ul li {
+    margin: auto;
+    padding: 10px 10px;
+    justify-content: center;
+}
+
+.menu ul {
+    display: flex;
+    align-items:flex-end;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}

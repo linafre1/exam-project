@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/progressBar.css" th:href="${'/progressBar.css'}">
+</head>
+<body>
+
+<div th:fragment="progressBar">
+    <div class="progress-container" th:each="progress : ${session.progressMap}">
+        <div class="progress-box" th:text="${progress.key.name + ' level ' + progress.key.level}"></div>
+
+        <div class="outer-border">
+            <div class="inner-border">
+                <input type="hidden" th:value="${progress.value.progress}">
+            </div>
+        </div>
+    </div>
+    <script src="../static/JS/challenge.js" th:src="${'/JS/challenge.js'}"></script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment = "activityFragment">
+    <article  th:id="${activityDetail.id}" >
+        <div class="date" th:text = "${activityDetail.dateTime}">2021-05-12</div>
+        <div class="activityImage">
+            <img th:src="${'../images/' + session.activityDetail.id + '.jpg'}">
+        </div>
+        <div class="activity-wrapper">
+            <div class="alias-date">
+                <a class="alias"  th:text = "${activityDetail.user.firstName + activityDetail.user.lastName}">User</a>
+                <span class="duration" th:text = "${'was active for ' + activityDetail.duration.hours + ' hours and ' + activityDetail.duration.minutes +  ' minutes'}">23:10</span>
+            </div>
+            <div class="notes" th:text = "${activityDetail.notes}">Riktigt svettigt pass!</div>
+        </div>
+        <div class="note-wrapper">
+            <div class="type" th:text = "${activityDetail.type.name}">Run</div>
+            <div class="distance" th:if="${activityDetail.distance != null}" th:text = "${activityDetail.distance + ' km'}">4.14</div>
+        </div>
+        <button><a th:href="${'/editActivity?activityId=' + activityDetail.id}">Edit activity</a></button>
+    </article>
+</div>
+
+</body>
+</html>

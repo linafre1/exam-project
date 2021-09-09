@@ -1,0 +1,66 @@
+.screen-cover {
+    position:fixed;
+    width: 100%;
+    right: 0;
+    height: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 2;
+    transition: all .20s ease-in-out;
+
+    display:grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.screen-cover .badge-popup {
+    position: absolute;
+    display:grid;
+    width:250px;
+    height:250px;
+    border-radius:25px;
+    background-color: #f3f3f3;
+    border: 3px solid #9E9E9E;
+    padding:10px;
+    justify-items: center;
+}
+.screen-cover .badge-popup  a{
+    background-color:orange;
+    color:white;
+    padding:5px 10px;
+    cursor:pointer;
+    border-radius:10px;
+    font-size:18px;
+    display: flex;
+    align-items: center;
+}
+
+.hide {
+    display:none
+}
+
+.screen-cover .badge  {
+    opacity: 1;
+    height:150px;
+    width: 150px;
+    margin:10px 20px;
+    padding: 10px;
+    display:grid;
+    justify-items: center;
+    border:solid 5px #f5f2f2;
+    border-radius: 20px 20px 150px 150px;
+}
+
+.badge-popup .badge-name {
+    font-weight:bold;
+    font-size:12px;
+    margin-bottom: 0px;
+     color: #f5f2f2;
+}
+.badge-popup .badge-description {
+    font-weight:bold;
+    font-size:60px;
+    color: #f5f2f2;
+    margin-bottom:5px;
+    border-bottom: solid 3px; white;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="${'/layoutProfile.css'}" href="../static/layoutProfile.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/content.css'}" href="../static/content.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/summary.css'}" href="../static/banner.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/header.css'}" href="../static/header.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/menu.css'}" href="../static/menu.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/friend.css'}" href="../static/friend.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/comment.css'}" href="../static/comment.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/profile.css'}" href="../static/profile.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/badges.css'}" href="../static/badges.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/componentHeader.css'}" href="../static/componentHeader.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title th:text="${session.profileDetail.firstName + ' ' + session.profileDetail.lastName}">Profile</title>
+</head>
+<body>
+<div class="header" th:replace="headerFragment :: headerFragment">
+    Header
+</div>
+
+<div class="centered">
+    <div class="main profile-centered">
+        <div class="profileFragment">
+            <h3 class="component-header">Profile Details</h3>
+            <section class="profile-container">
+                <div class="profile-information">
+                    <img th:src="${'../images/' + session.profileDetail.id + '.jpg'}">
+                    <div class="information-container">
+                        <div class="profile-top">
+                            <h1 class="profile-name"
+                                th:text="${session.profileDetail.firstName + ' ' + session.profileDetail.lastName}">Sebastian
+                                Berg</h1>
+                            <div class="profile-alias" th:text="${'(' + session.profileDetail.alias + ')'}">(Setheboii1337)
+                            </div>
+                        </div>
+                        <div class="profile-middle">
+                            <div>Hi, my favorite workout is running!</div>
+                        </div>
+                    </div>
+                    <div class="yes profile-request"><a th:href="${'/sendFriendRequest?friendId=' + session.profileDetail.id}"
+                                        th:text="${'Send Friend Request'}"></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+.landingBackground {
+    height:800px;
+    width:100%;
+    background:url(../images/landingImage.jpg) center center no-repeat;
+    background-size: 100% auto;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    position:relative;
+    overflow:hidden;
+    margin: 5px 0;
+    border-bottom: 5px solid #f3a65a;
+}
+
+.faded-square {
+    height: 800px;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.67);
+    display: grid;
+    align-content: center;
+}
+
+.div-for-button {
+    align-self: center;
+    justify-content: center;
+    display: flex;
+}
+
+button {
+    border-radius: 35px;
+    height: 112px;
+    width: 221px;
+    background-color: #F88F4C;
+    color: white;
+    font-size: 30px;
+    border: none;
+}
+
+button:hover {
+transform: scale(1.03);
+}
+
+.div-for-information {
+    font-size: 20px;
+    color: rgb(36, 36, 36);
+    padding: 20px;
+    padding-left: 90px;
+    padding-right: 90px;
+    font-family: sans-serif;
+       margin-bottom: 10px;
+}
+
+#da-information {
+    line-height:1.25;
+    font-style: italic;
+    color: #565656;
+}

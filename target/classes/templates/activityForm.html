@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="${'/layout.css'}" href="../static/layout.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/content.css'}" href="../static/content.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/challenges.css'}" href="../static/challenges.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/banner.css'}" href="../static/banner.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/header.css'}" href="../static/header.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/menu.css'}" href="../static/menu.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/activityForm.css'}" href="../static/activityForm.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/form.css'}" href="../static/form.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Log Activity</title>
+
+</head>
+<body>
+<div class="header" th:replace="headerFragment :: headerFragment">
+    Header
+</div>
+
+<div class="menu" th:replace="menuFragment :: menuFragment">
+    Menu
+</div>
+<div class="centered">
+    <div class="form logActivity">
+        <h1>Your Activity</h1>
+        <form th:object="${activity}" action="/saveActivity" method="POST">
+            <label class="label">Choose date and time for activity<input class="input-window" type="datetime-local" th:field="*{dateTime}"> </label>
+            <!--Automatic? -->
+            <label class="label">Duration for the activity<span class="duration">
+                 <input class="input-window" id="hours" type="number" th:field="*{duration.hours}" placeholder="hh">
+                : <input class="input-window" id="minutes" type="number" th:field="*{duration.minutes}" placeholder="mm">
+                : <input class="input-window" id="seconds" type="number" th:field="*{duration.seconds}" placeholder="ss">
+            </span></label>
+            <label class="label">How was the activity?<input class="input-window" type="text" th:field="*{notes}"></label>
+            <label class="label">Enter distance, in kilometers<input class="input-window" id="distance" type="text" th:field="*{distance}" value="0"></label>
+            <label class="label">Choose kind of activity
+                <select class="input-window" name="activityType">
+                <option class="input-window" th:each="type : ${types}" th:text="${type.name}" th:value="${type.id}"></option>
+            </select></label>
+            <input class="input-window" type="hidden" th:field="*{id}">
+            <input class="input-window" type="hidden" th:field="*{user}">
+
+            <input class="submit-button" type="submit" value="Log my activity">
+        </form>
+        <a href="/home"><button class="back-button">Back</button></a>
+
+        <script src="../static/JS/activity.js" th:src="${'/JS/activity.js'}"></script>
+    </div>
+</div>
+</body>
+</html>

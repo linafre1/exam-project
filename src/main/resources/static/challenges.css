@@ -1,0 +1,113 @@
+.challenges {
+    display: grid;
+    grid-template-areas: '. . . .';
+    column-gap:15px;
+    row-gap:10px;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+.challenges .badges img {
+    width: 40%;
+}
+.challenges .challenge-wrapper {
+    border:solid 1px #f3f3f3;
+    padding:15px;
+    border-radius: 15px;
+    display: grid;
+    height:100%;
+    justify-items: center;
+    background-color: white;
+}
+
+/*.challenges .challenge-wrapper:hover {
+    border:4px solid #f3a65a;
+    box-shadow: 1px 1px 5px #c5c5c5;
+}*/
+.challenges .challenge-header {
+    font-size: 20px;
+    font-weight:bold;
+}
+.challenges .challenge-date {
+    font-style:italic;
+    margin-bottom: 2px;
+    border-bottom: 4px solid #f3f3f3;
+}
+.challenges .challenge-description {
+    margin-bottom: 5px;
+    line-height:1.25;
+    font-style: italic;
+    color: #7a7a7a;
+}
+.challenges .challenge-objective {
+    margin-bottom: 5px;
+}
+.challenges .challenge-objective-wrapper {
+    display:flex;
+}
+.challenges .v {
+    font-size: 22px;
+    margin-top: -3px;
+    margin-left: 11px;
+    margin-right: 9px;
+    font-weight:bold;
+    color: #f3a65a;
+}
+
+
+.challenges .badge {
+    opacity:0.4;
+    height:150px;
+    width: 150px;
+    margin:10px 20px;
+    padding: 10px;
+    display:grid;
+    justify-items: center;
+    border:solid 5px #f5f2f2;
+    border-radius: 20px 20px 150px 150px;
+    align-content: center;
+}
+.challenges .badge-achieved {
+    opacity: 1.0;
+    border-color: #f3a65a;
+}
+
+.challenges .badge img {
+     width:75%;
+}
+.challenges .badge-name {
+    font-weight:bold;
+    font-size:12px;
+    margin-bottom: 0px;
+     color: #f5f2f2;
+}
+.challenges .badge-description {
+    font-weight:bold;
+    font-size:60px;
+    color: #f5f2f2;
+    margin-bottom:5px;
+    border-bottom: solid 3px;
+}
+
+/* for summary/profile-page*/
+.challenges .badge-progress {
+  background-color:white;
+      opacity:0.4;
+      height: 160px;
+      overflow:hidden;
+      margin-right:0px;
+      margin-left:auto;
+      width:55%;          /* 1 - progress*/
+      margin-top: -66%;
+      z-index: 2;
+      display: none;
+}
+
+.progress-percentage {
+    display: grid;
+    justify-self: center;
+    font-size: 16px;
+    color: #cacaca;
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>SideMenuFragment</title>
+    <link rel="stylesheet" type="text/css" th:href="${'/layout.css'}" href="../static/layout.css">
+</head>
+<body>
+<div class="side" th:fragment="sideFragment">
+    <div class="activity-log"><a href="/logActivity">Log activity</a></div>
+    <div class="friend" th:replace="friendFragment :: friendFragment"></div>
+    </div>
+</body>
+</html>

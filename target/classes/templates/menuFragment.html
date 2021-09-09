@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu bar fragment</title>
+    <link rel="stylesheet" type="text/css" th:href="${'/layout.css'}" href="../static/layout.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/menu.css'}" href="../static/menu.css">
+</head>
+<body>
+<div class="menu" th:fragment="menuFragment">
+    <div class="menu-wrapper">
+        <ul>
+        </ul>
+        <div th:if="${session.isLoggedIn}">
+        <ul>
+
+                <!--<li><a href="/">Challenges</a> </li>
+                &lt;!&ndash;            <li><a href="/">Activities</a> </li>&ndash;&gt;
+                <li><a href="/getSummary">Summary</a> </li>-->
+
+
+        </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

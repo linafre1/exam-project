@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div th:fragment = "challengeFragment" class="challenges-outer-wrapper">
+    <h3 class="component-header">Weekly Challenges</h3>
+    <div class="challenges">
+        <a class="challenge-wrapper" th:each=" challenge : ${session.challenges}" th:href="${'/getSummaryForUser?userId=' + session.user.id}">
+
+            <div class="challenge-header" th:text="${challenge.name}"></div>
+            <div class="challenge-date" th:text="${challenge.startDate + ' until ' + challenge.endDate}"></div>
+            <div class="challenge-description" th:text="${challenge.description}"></div>
+            <div class="challenge-objective-wrapper">
+                <div class="v">></div><div class="challenge-objective" th:text="${challenge.type.name + ' ' + challenge.distance + ' km in 10 days'}"></div>
+            </div>
+            <!--<div class="badge b">
+                <img th:src="@{${'./images/' + challenge.badge.url +'.png'}}" th:unless="${challenge.badge == null}" class="image"  alt="a badge">
+                <div class="badge-name" th:text="${challenge.badge.name}"></div>
+                <div class="badge-description" th:text="${challenge.badge.description}"></div>
+            </div>-->
+
+        </a>
+    </div>
+</div>
+
+<div th:fragment = "challengeFragmentProgress" class="challenges-outer-wrapper">
+    <h3 class="component-header">Challenge Progress</h3>
+    <div class="challenges">
+    <div class="challenge-wrapper" th:each="progress : ${session.progressMap}">
+        <div class="challenge-header" th:text="${progress.key.name}"></div>
+        <div class="challenge-date" th:text="${progress.key.startDate + ' until ' + progress.key.endDate}"></div>
+        <div class="challenge-description" th:text="${progress.key.description}"></div>
+        <div class="challenge-objective-wrapper">
+            <div class="v">></div><div class="challenge-objective" th:text="${progress.key.type.name + ' ' + progress.key.distance + 'km in 10 days'}"></div>
+        </div>
+        <div th:class="${progress.key.badge.style + ' badge'}">
+<!--            <img th:src="@{${'./images/' + progress.key.badge.url +'.png'}}" th:unless="${progress.key.badge == null}" class="image"  alt="a badge">-->
+            <div class="badge-name" th:text="${progress.key.badge.name}"></div>
+            <div class="badge-description" th:text="${progress.key.badge.description}"></div>
+        </div>
+        <div class="badge-progress"></div>
+        <div class="progress-progress-wrapper">
+            <div class="progress-outer-border">
+                <div class="progress-inner-border">
+                    <input type="hidden" th:value="${progress.value.progress}">
+                </div>
+            </div>
+        </div>
+        <div class="progress-percentage" th:text="${#numbers.formatDecimal(progress.value.progress * 100, 0, 0) + '%'}"></div>
+    </div>
+    </div>
+</div>
+
+
+</body>
+</html>

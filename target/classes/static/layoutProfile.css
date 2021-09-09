@@ -1,0 +1,286 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*div {
+    border: solid 1px;
+}*/
+
+.centered {
+    max-width: 1450px;
+    margin: 0 auto;
+    grid-area: centered;
+}
+
+.badges-wrapper .badges {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-height: none;
+    max-width: none;
+}
+
+.header {
+    background-color: #f3a65a;
+    padding: 5px 0;
+
+}
+
+
+
+.summaryBanner {
+    height: 350px;
+    grid-area: summaryBanner;
+}
+
+.right-side {
+    width:auto;
+    height:300px;
+    grid-area: right-side;
+    border: 1px solid grey;
+}
+
+.content {
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: 50px;
+    grid-area: content;
+
+}
+.challenges {
+    grid-area: challenges;
+    display:flex;
+    grid-gap: 10px 20px;
+    margin-left: 25px;
+    margin-right: 20px;
+
+}
+.progress-title {
+    font-size: 16px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+.progress-container {
+    border: solid 2px #f3f3f3;
+    margin:auto auto;
+    border-radius: 8px;
+    padding: 10px 10px;
+    width: 100%;
+    max-width: 400px;
+    display:grid;
+
+
+}
+.progress-dates {
+    display:flex
+
+}
+.progress-dates div{
+    padding: 5px;
+    margin-bottom:10px;
+}
+
+.progress-progress-wrapper {
+    display:flex;
+
+}
+
+
+.badgesFragment {
+    grid-area: badges;
+}
+
+.badges-wrapper {
+    height: 400px;
+    padding: 20px;
+    margin: 40px 20px 20px 20px;
+    border: solid 1px orange;
+    border-radius: 10px;
+
+}
+
+.badges-wrapper h1 {
+    justify-content: center;
+    align-self: center;
+    display: flex;
+}
+
+.badge-content {
+    justify-content: center;
+}
+
+.main {
+    display: grid;
+    grid-template-areas:
+                        ". profile .";
+
+}
+
+@media (max-width: 800px) {
+    .menu {
+        display: none;
+    }
+    .side {
+        display: none;
+    }
+
+
+}
+
+
+
+ul {
+
+    margin-left:0;
+
+    padding-left:0;
+
+}
+
+li {
+
+    list-style:none;
+
+}
+h1, h3 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+h2 {
+
+    color: #242628;
+    font-family: sans-serif;
+    /*font-family: "Roboto Light";*/
+    font-size: 30px;
+
+}
+
+.hide {
+
+    display: none;
+
+}
+
+
+
+.our-slogan {
+    display: flex;
+    background-color: gray;
+}
+
+#logo {
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 10%;
+}
+
+/*.surrounded {
+    position: relative;
+}*/
+
+.background-container {
+    height:350px;
+    width:100%;
+    max-width: 1000px;
+    background:url(../images/profilepicture.jpg) center center no-repeat;
+    background-size: 100% auto;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    margin: 5px 0;
+    border: #242628 1px;
+    /*position: relative;*/
+}
+
+.middle-section {
+    height: 100px;
+}
+
+.section.profile-container {
+    display: grid;
+    justify-content: center;
+    background: white;
+    border-radius: 20px;
+    padding: 0px 20px 20px 20px;
+    margin: 10px;
+    max-width: 1100px;
+    grid-row-gap: 15px;
+
+}
+
+.top-card-image-wrapper img {
+    width: 150px;
+    height: auto;
+    border: solid lightgray 5px;
+    border-radius: 20px;
+    /*position: fixed;*/
+}
+
+.profile-top {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid darkgrey;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    margin-right: 10px;
+}
+
+.display-flex {
+    height: 400px;
+    /*border: solid 1px lightgray;*/
+    border-radius: 10px;
+    padding: 10px;
+    margin: 40px 30px 20px 30px;
+}
+
+.challenge-wrapper .badges {
+    padding: 0px;
+    margin: 0px;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.badges .challenge-wrapper {
+    flex-direction: column;
+    align-items: center;
+    align-content: stretch;
+    width: 100px;
+    height:100px;
+    max-height: 200px;
+    max-width: 200px;
+    padding: 0px;
+    margin:2px;
+    border:none;
+    }
+.badges .badge {
+    width: 80px;
+    height:80px;
+    max-height: 100px;
+    max-width: 100px;
+    margin-top:10px;
+    padding: 0px;
+}
+.badges .badge img{
+   width: 65px;
+   margin: 2px;
+}
+.badges .badge .badge-name{
+   font-size:12px;
+   margin-bottom:20px;
+}
+
+

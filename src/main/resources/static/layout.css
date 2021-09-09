@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #afd5d91f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    /* font-size: 20px; */
+}
+
+/*div {
+    border: solid 1px;
+}*/
+
+.centered {
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #f3a65a;
+    padding: 5px 0;
+
+}
+
+.banner {
+    height: 350px;
+}
+
+.side {
+    width: auto;
+    height: auto;
+    min-width: 300px;
+    min-height: 400px;
+    grid-area: side;
+    padding: 10px 5px;
+    margin: 15px;
+    background-color: white;
+    border-radius: 20px;
+}
+.activity-log {
+    margin: 15px;
+    padding: 15px 5px;
+    border-radius: 20px;
+    border: solid 1px #f3a65a;
+    color: #f3a65a;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.activity-log:hover {
+  border: solid 1px #ffffff;
+  color: white;
+  background-color: #f3a65a;
+}
+
+.content {
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: 50px;
+    grid-area: content;
+
+}
+.challenges {
+    grid-area: challenges;
+}
+
+.main {
+    display: grid;
+    grid-template-areas: "side challenges challenges"
+                          "side content content"
+                          "side content content";
+
+}
+
+@media (max-width: 800px) {
+    .menu {
+        display: none;
+    }
+    .side {
+        display: none;
+    }
+
+
+}
+
+
+
+ul {
+
+    margin-left:0;
+
+    padding-left:0;
+
+}
+
+li {
+    font-size: 20px;
+    list-style:none;
+
+}
+h1, h3, h2 {
+font-family: 'Orbitron', sans-serif;
+}
+
+.hide {
+    display: none;
+
+}
+
+.our-slogan {
+display: flex;
+background-color: gray;
+}
+
+#logo {
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 10%;
+}
+
+.back-button {
+    border-radius: 35px;
+    height: 50px;
+    width: 330px;
+    background-color: #F88F4C;
+    color: white;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+transform: scale(1.03);
+}
+
+.crate-user-button {
+    border-radius: 35px;
+    height: 50px;
+    width: 330px;
+    background-color: #F88F4C;
+    color: white;
+    font-size: 22px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.crate-user-button:hover {
+transform: scale(1.03);
+}
+
+.login-button {
+    border-radius: 35px;
+    height: 50px;
+    width: 330px;
+    background-color: #F88F4C;
+    color: white;
+    font-size: 22px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+transform: scale(1.03);
+}
+
+.label {
+    font-family: sans-serif;
+}
+
+.input-window {
+    border-radius: 8px;
+    height: 30px;
+}
+
+.submit-button {
+    border-radius: 35px;
+    height: 50px;
+    width: 330px;
+    background-color: #F88F4C;
+    color: white;
+    font-size: 22px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+transform: scale(1.03);
+}
+

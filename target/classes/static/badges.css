@@ -1,0 +1,96 @@
+.badges-wrapper {
+    margin: 15px;
+    padding: 7px;
+    position:relative;
+    background-color: white;
+    border-radius: 20px;
+}
+.badges-wrapper .badge-header{
+    background-color:white;
+    font-weight:600;
+    font-family: Orbitron, Calibri;
+    color: #f3a65a;
+    width:fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    margin-left: 25px;
+    margin-top:-40px;
+    position:absolute;
+}
+
+.badges-wrapper .badges {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+}
+
+.badges-wrapper .badges .challenge-wrapper {
+    display: grid;
+    height:100%;
+}
+
+.badges-wrapper .badges .badge {
+    height:150px;
+    width: 150px;
+    margin:10px 10px;
+    padding: 10px;
+    display:grid;
+    justify-items: center;
+    border:solid 5px #f5f2f2;
+    border-radius: 20px 20px 150px 150px;
+    align-content: center;
+
+}
+
+.badges-wrapper .badges .badge-name {
+   font-weight:bold;
+    font-size:12px;
+    margin-bottom: 0px;
+     color: #f5f2f2;
+}
+
+.badges-wrapper .badge-description {
+    font-weight:bold;
+    font-size:60px;
+    color: #f5f2f2;
+    margin-bottom:5px;
+    border-bottom: solid 3px;
+}
+.badges-wrapper .badges img {
+    width: 100%;
+}
+
+.run {
+    background-image: linear-gradient(to right, #f8a2ce, #f8c4df,#f8a2ce);
+    border: solid #f3a65a 4px;
+
+}
+
+.walk {
+    background-image: linear-gradient(to right, #6ab86a, #a3e9a3,#6ab86a);
+    border: solid 4px #f3a65a;
+
+}
+
+.cycling {
+    background-image: linear-gradient(to right, #ad88d2, #cebae2,#ad88d2);
+    border: solid 4px #f3a65a;
+}
+/*
+.run {
+    background-color:#f8a2cea1;
+    border: solid #f3a65a 4px;
+
+}
+
+.walk {
+    background-color:#a7cca7a8;
+    border: solid 4px #f3a65a;
+
+}
+
+.cycling {
+    background-color:#baabca96;
+    border: solid 4px #f3a65a;
+}*/

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="profileFragment" class="profileFragment">
+    <div class="profile-background">
+    <h3 class="component-header">Profile Details</h3>
+    <section class="profile-container">
+        <div class="profile-information">
+            <img th:src="${'../images/' + session.profileDetail.id + '.jpg'}">
+            <div class="information-container">
+                <div class="profile-top">
+                    <h1 class="profile-name" th:text="${session.profileDetail.firstName + ' ' + session.profileDetail.lastName}">Sebastian Berg</h1>
+                   <!-- <div class="profile-alias" th:text="${'(' + session.profileDetail.alias + ')'}">(Setheboii1337)</div>-->
+                </div>
+                <div class="profile-middle">
+                    <div th:text="${session.profileDetail.description}">Hi, my favorite workout is running!</div>
+                </div>
+            </div>
+        </div>
+        <div class="summary" th:replace="summaryFragment :: summaryFragment" ></div>
+
+    </section>
+    </div>
+
+</div>
+
+</body>
+</html>

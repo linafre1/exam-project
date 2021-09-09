@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Badges</title>
+</head>
+<body>
+<div class="badges-wrapper" th:fragment="badgesFragment">
+    <h3 class="component-header">Earned Badges</h3>
+    <div class="badge-content">
+        <div class="badges">
+            <div class="challenge-wrapper" th:each=" badge : ${session.badges}" th:unless="${session.badges == null}">
+                <div th:class="${badge.value.style + ' badge'}" th:unless="${session.badges == null}">
+                    <div class="badge-description" th:text="${badge.value.description}"></div>
+                    <div class="badge-name" th:text="${badge.value.name}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

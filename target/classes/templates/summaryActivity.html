@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="${'/layout.css'}" href="../static/layout.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/content.css'}" href="../static/content.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/challenges.css'}" href="../static/challenges.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/banner.css'}" href="../static/banner.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<body>
+
+<div class="header" th:replace="headerFragment :: headerFragment">
+    Header
+</div>
+
+<div class="menu" th:replace="menuFragment :: menuFragment">
+    Menu
+</div>
+
+<div class="centered">
+    <div class="banner">
+
+    </div>
+    <div class="main">
+        <div class="side" >
+            <div class="activity-menu">
+                <h3>Activities</h3>
+                <div class="activity-log">
+                    <div>Log activity</div>
+                    <div>History</div>
+                </div>
+            </div>
+            <div class="social">
+                <h3>Social</h3>
+                <div class="friends">
+                    <div>Friends</div>
+                    <div>- Kimchi</div>
+                </div>
+                <div class="requests">
+                    <div>Friend Requests</div>
+                    <div> - Kimchi</div>
+                </div>
+                <div>
+                    <div>Users</div>
+                    <div> - Kimchi</div>
+                </div>
+            </div>x
+        </div >
+
+        <ul class="challenges">
+            <li>
+                <a href="#">
+                    <img src="">
+                    <div>
+                        <h2>Weekly Challenge #1</h2>
+                        <span>Run 10 miles over 10 days</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="">
+                    <div>
+                        <h2>Weekly Challenge #2</h2>
+                        <span>Run 10 miles over 10 days</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="">
+                    <div>
+                        <h2>Weekly Challenge #3</h2>
+                        <span>Run 10 miles over 10 days</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="">
+                    <div>
+                        <h2>Weekly Challenge #4</h2>
+                        <span>Run 10 miles over 10 days</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <div class="content" th:replace="contentFragment :: contentFragment">
+            Content
+        </div>
+        <div class="right-side" >
+            Side container for upcoming events, or ads
+        </div >
+    </div>
+</div>
+
+
+
+</body>
+
+
+
+</html>

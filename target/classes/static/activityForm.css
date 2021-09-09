@@ -1,0 +1,38 @@
+/*.logActivity {
+    display:grid;
+    justify-content: center;
+    grid-template-columns: '.';
+ }
+  .logActivity form {
+      display: grid;
+  }
+  .logActivity form label {
+      display:grid;
+      margin-bottom:20px;
+  }
+*/
+.duration {
+    display: flex;
+}
+
+.duration input {
+    max-width: 40px;
+}
+
+.invalidInput {
+    border-color: red;
+    border-width: 2px;
+}
+
+.hidden {
+    display: none;
+}
+
+.success {
+    color: green;
+}
+
+#notes {
+  height:120px;
+  width:400px
+}

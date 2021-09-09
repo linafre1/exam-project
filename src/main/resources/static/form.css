@@ -1,0 +1,15 @@
+.form {
+    display:grid;
+    justify-content: center;
+    grid-template-columns: '.';
+}
+
+.form form {
+      display: grid;
+      margin-bottom:20px;
+  }
+
+.form form label {
+      display:grid;
+      margin-bottom:20px;
+  }

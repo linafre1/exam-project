@@ -1,0 +1,27 @@
+.progress-progress-wrapper {
+    width:100%
+}
+
+.progress-outer-border {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 15px;
+    position: relative;
+    border: solid 1px;
+    border-color: #cacaca;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.progress-inner-border {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    background-color: #f3a65a;
+}
+
+.completed {
+    background-color: #f3a65a;
+    opacity:1.0
+}

@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #afd5d91f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*div {
+    border: solid 1px;
+}*/
+
+.centered {
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #f3a65a;
+    padding: 5px 0;
+
+}
+
+
+
+.banner {
+    height: 0px;
+}
+
+.right-side {
+    width:auto;
+    height:300px;
+    grid-area: right-side;
+    border: 1px solid grey;
+}
+
+.content {
+    width: auto;
+    padding: 7px;
+    margin: 15px;
+    background-color: white;
+    border-radius: 20px;
+    min-height: 600px;
+    grid-area: content;
+
+}
+.challenges-outer-wrapper {
+    grid-area: challenges;
+    background-color: white;
+    border-radius: 20px;
+    padding: 7px;
+    margin: 15px;
+    min-height: 600px;
+}
+.challenges {
+    display:flex;
+    grid-gap: 10px 20px;
+    margin-left: 25px;
+    margin-right: 20px;
+
+}
+.progress-title {
+    font-size: 16px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+.progress-container {
+    border: solid 2px #f3f3f3;
+    margin:auto auto;
+    border-radius: 8px;
+    padding: 10px 10px;
+    width: 100%;
+    max-width: 400px;
+    display:grid;
+
+
+}
+.progress-dates {
+    display:flex
+
+}
+.progress-dates div{
+    padding: 5px;
+     margin-bottom:10px;
+}
+
+.progress-progress-wrapper {
+    display:flex;
+
+}
+
+.profile {
+    grid-area: profile;
+}
+.badges-wrapper {
+    grid-area: badges;
+}
+
+.main {
+    display: grid;
+    grid-template-areas:
+                          "profile challenges challenges"
+                          "badges content content"
+                          "badges content content";
+}
+
+@media (max-width: 800px) {
+    .menu {
+        display: none;
+    }
+    .side {
+        display: none;
+    }
+
+
+}
+
+
+
+ul {
+
+    margin-left:0;
+
+    padding-left:0;
+
+}
+
+li {
+
+    list-style:none;
+
+}
+h1, h3 {
+font-family: 'Orbitron', sans-serif;
+}
+
+h2 {
+
+    color: #242628;
+    font-family: 'Orbitron', sans-serif;
+    /*font-family: "Roboto Light";*/
+    font-size: 30px;
+
+}
+
+.hide {
+
+    display: none;
+
+}
+
+
+
+.our-slogan {
+display: flex;
+background-color: gray;
+}
+
+#logo {
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 10%;
+}
+
+

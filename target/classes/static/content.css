@@ -1,0 +1,230 @@
+article {
+display:grid;
+grid-template-areas: "image aw aw nw"
+"sc sc sc sc"
+"cw cw cw cw";
+background-color: #fff;
+line-height: 1.2;
+padding:7px;
+margin: 0px 10px;
+grid-row-gap: 10px;
+grid-column-gap: 5px;
+border:solid 5px #f8f8f8;
+border-radius:15px;
+position: relative;
+}
+
+.date {
+grid-area: date;
+}
+
+
+.activity-wrapper {
+grid-area: aw;
+}
+.note-wrapper {
+grid-area: nw;
+}
+.show-comments {
+grid-area: sc;
+}
+.comment-wrapper{
+grid-area: cw;
+}
+
+.training {
+    display: grid;
+    grid-template-columns: auto;
+    column-gap: 30px;
+    row-gap: 10px;
+
+}
+
+.distance {
+    opacity:0.7;
+    font-size: 42px;
+    font-weight: bold;
+    color: #93b471;
+}
+
+.type {
+      color: #a2a2a2;
+    font-style:italic;
+    font-size: 14px;
+    font-family:calibri;
+}
+/*
+.date-type-wrapper {
+    display:grid;
+    grid-template-areas: "icon alias date"
+                            "icon type type" ;
+    padding: 5px;
+}
+
+.note-wrapper {
+    display: grid;
+    grid-template-areas: "notes notes"
+                          "duration distance";
+
+}
+
+.comment-wrapper {
+    display: flex;
+    grid-area: wrapper;
+}
+
+.hide {
+    display: none;
+}
+*/
+.activityImage {
+
+    /*background:url(../images/running.png) left center no-repeat;*/
+    height: auto;
+    width: 60px;
+    margin: 4px;
+    border-radius: 10px;
+}
+
+.activity-image-container {
+    grid-area:image;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.activity-wrapper .alias{
+    font-weight:bold;
+    color: #93b471;
+}
+.activity-wrapper {
+    padding:5px;
+    width:450px;
+}
+
+
+.note-wrapper {
+     display:grid;
+     align-items:center;
+     padding-left:15px;
+
+}
+.training-header {
+    margin-left:50px;
+    padding-bottom:5px;
+    margin-top:10px;
+    color: orange;
+    border-bottom:solid 2px orange;
+    display:flex;
+    justify-content:center;
+    margin-bottom: 5px;
+
+}
+.date {
+    color: #a2a2a2;
+    font-style:italic;
+    font-size: 14px;
+    font-family:calibri;
+}
+
+/*
+.alias {
+    grid-area: alias;
+}
+
+.date {
+    grid-area: date;
+}
+
+.type {
+    grid-area: type;
+}
+
+.notes {
+    grid-area: notes;
+}
+
+.duration {
+    grid-area: duration;
+}
+
+.distance {
+    grid-area: distance;
+}
+
+.activities {
+    background-color: #eebdb0;
+}
+.activities {
+    display:grid;
+    grid-template-columns: auto;
+}
+
+article {
+    display:grid;
+    grid-template-columns: auto;
+
+    background-color: #f8f8f8;
+    line-height: 1.2;
+    padding:5px;
+    margin: 20px 20px;
+    width: 900px;
+}
+.article-header {
+    display: grid;
+    grid-template-areas: "image alias type"
+                            "image date date" ;
+    padding:5px;
+}
+.image {
+    grid-area:image;
+}
+.alias {
+    grid-area:alias;
+}
+.type {
+    grid-area:type;
+}
+.date {
+    grid-area:date;
+}
+.article-header {
+    display: grid;
+    grid-template-areas:    "image alias type"
+                            "image date date" ;
+    padding:5px;
+}
+.duration {
+    grid-area:duration;
+}
+.distance {
+    grid-area:distance;
+}
+.notes {
+    grid-area:notes;
+}
+
+.article-body {
+    display: grid;
+    grid-template-areas: "notes notes "
+                            "duration distance" ;
+    padding:5px;
+}
+
+.like {
+    grid-area:like;
+}
+.comment {
+    grid-area:comment;
+}
+.likes {
+    grid-area:likes;
+}
+.article-footer {
+    display: grid;
+    grid-template-areas: "like comment likes";
+
+    background-color: rgb(224, 224, 224);
+    color: rgb(41, 41, 41);
+}*/
+

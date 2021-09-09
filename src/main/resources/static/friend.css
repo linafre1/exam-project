@@ -1,0 +1,120 @@
+.friend {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 18px;
+     font-family:Calibri;
+}
+.friend a {
+    text-decoration: none;
+    color: black;
+}
+
+.friends{
+    border:solid 1px transparent;
+    border-radius:7px;
+    padding: 3px;
+}
+
+.friend-header {
+    font-size: 20px;
+    border-bottom: solid 1px #cacaca;
+    margin-bottom: 3px;
+}
+.friend-formatter {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    justify-content:flex-start;
+    align-items: center;
+    margin-left:10px;
+    margin-bottom: 4px;
+    grid-gap: 10px 10px;
+
+}
+
+.friend-formatter:first-child {
+    margin-top: 10px;
+}
+
+.friend-item {
+    display:flex;
+    align-items: center;
+    font-size: 18px;
+    padding:2px 5px;
+}
+.friend-item div{
+    margin: 0 2px;
+}
+.friend-requests {
+    border:solid 1px transparent;
+    border-radius:7px;
+    padding: 3px;
+    display:grid;
+    font-size: 18px;
+}
+
+.friend-request-header {
+    font-size: 20px;
+    border-bottom: solid 1px #cacaca;
+    margin-bottom: 3px;
+}
+.friend-request-formatter {
+    display:grid;
+    grid-template-columns: auto 100px auto auto;
+    justify-content:flex-start;
+    align-items: center;
+    margin-left:10px;
+    margin-bottom: 4px;
+    grid-gap: 10px 10px;
+
+}
+
+.yes,.no {
+    border: solid 1px #f78b20;
+    border-radius: 7px;
+    background-color: #f4a659;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    justify-content: center;
+}
+
+.yes:hover,.no:hover {
+    background-color: #f3a65a;
+}
+.profile-request {
+    width: 150px;
+    height: 50px;
+}
+
+.friend-image {
+    height: 8px;
+    width: 8px;
+    background-color:#f3a65a;
+    border-radius:50%;
+}
+
+.all-users {
+    border:solid 1px transparent;
+    border-radius:7px;
+    padding: 3px;
+    display:grid;
+    font-size: 18px;
+    row-gap: 5px;
+}
+.user-header {
+    font-size: 20px;
+    border-bottom: solid 1px #cacaca;
+    margin-bottom: 3px;
+}
+.user-formatter {
+    display:grid;
+    grid-template-columns: auto 130px auto auto;
+    justify-content:flex-start;
+    align-items: center;
+    /* margin-left:10px; */
+    margin-bottom: 4px;
+    grid-gap: 10px 10px;
+}

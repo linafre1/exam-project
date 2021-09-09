@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="${'/layoutSummary.css'}" href="../static/layoutSummary.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/content.css'}" href="../static/content.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/summary.css'}" href="../static/banner.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/header.css'}" href="../static/header.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/menu.css'}" href="../static/menu.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/friend.css'}" href="../static/friend.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/progressBar.css'}" href="../static/progressBar.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/challenges.css'}" href="../static/challenges.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/comment.css'}" href="../static/comment.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/profile.css'}" href="../static/profile.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/badges.css'}" href="../static/badges.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/componentHeader.css'}" href="../static/componentHeader.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/badgeWin.css'}" href="../static/badgeWin.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<body>
+
+<div class="header" th:replace="headerFragment :: headerFragment">
+    Header
+</div>
+
+<div class="centered">
+    <div class="main">
+        <div class="profile" th:replace="profileFragment :: profileFragment" ></div>
+        <div class="challenges" th:replace="challengeFragment :: challengeFragmentProgress" ></div>
+        <div class="content" th:replace="contentFragment :: contentFragment">Content</div>
+        <div class="friend" th:replace="badgesFragment :: badgesFragment"></div>
+    </div>
+</div>
+<script src="../static/JS/challenge.js" th:src="${'/JS/challenge.js'}"></script>
+<div class="screen-cover" th:classappend="${session.gotBadge == null} ? 'hide':''">
+    <div class="badge-popup" th:if="${session.gotBadge != null}">
+        <div th:class="${session.gotBadge.style + ' badge'}" th:unless="${session.gotBadge == null}">
+            <div class="badge-description" th:text="${session.gotBadge.description}"></div>
+            <div class="badge-name" th:text="${session.gotBadge.name}"></div>
+        </div>
+        <a th:href="${'/clearWonBadge'}">Claim Badge!</a>
+    </div>
+</div>
+</body>
+
+
+
+</html>

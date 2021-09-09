@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="${'/layout.css'}" href="../static/layout.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/header.css'}" href="../static/header.css">
+    <link rel="stylesheet" type="text/css" th:href="${'/landingPage.css'}" href="../static/landingPage.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<body>
+
+<div class="header" th:replace="headerFragment :: headerFragment">
+    Header
+</div>
+
+<div class="menu" th:replace="menuFragment :: menuFragment">
+    Menu
+</div>
+
+<div class="centered">
+    <div class="landingBackground">
+        <div class="faded-square">
+            <div class="div-for-information">
+                <h1> Welcome to Activly</h1>
+                <p id="da-information">Have you been looking for a social training platform to motivate you to stay active! Here you can get
+                    together with your friends, earn badges and see your progress over the weeks. Sign up for free and
+                    try our service. Stay Active!
+                </p>
+            </div>
+            <div class="div-for-button">
+                <a href="/signup">
+                    <button class="sign-up-button">Sign up!</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+</html>

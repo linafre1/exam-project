@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!--    <link rel="stylesheet" type="text/css" th:href="${'/content.css'}" href="../static/content.css">-->
+
+    <title>Title</title>
+</head>
+<body>
+<div class="summary" th:fragment="summaryFragment">
+    <div class="total-time">
+        <div class="small-header">Total active time:</div>
+        <div class="big-text" th:unless="${session.summary == null}" th:text="${session.summary.duration.hours + 'h ' + session.summary.duration.minutes +  'min '+ session.summary.duration.seconds +  's'}">3h 24min 34sek</div>
+    </div>
+    <div class="total-activities">
+        <div class="small-header">Total activities:</div>
+        <div class="big-text" th:unless="${session.summary == null}" th:text="${session.summary.activity}"> 23 activities</div>
+    </div>
+    <div class="total-distance">
+        <div class="small-header">Total distance</div>
+        <div class="big-text" th:unless="${session.summary == null}" th:text="${session.summary.distance + 'km'}">342,5 km</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!--    <link rel="stylesheet" type="text/css" th:href="${'/content.css'}" href="../static/content.css">-->
+
+    <title>Title</title>
+</head>
+<body>
+<div class="content" th:fragment="contentFragment">
+    <div class="training">
+        <h3 class="component-header">Recent Activities</h3>
+        <article th:each="activity : ${session.activities}" th:id="${activity.id}">
+
+            <div class="activity-image-container">
+                <img class="activityImage" th:src="${'../images/' + activity.user.id + '.jpg'}">
+            </div>
+            <div class="activity-wrapper">
+                <div class="alias-date">
+                    <div class="date" th:text="${activity.dateTime}">2021-05-12</div>
+                    <a class="alias" th:href="${'/getSummaryForUser?userId=' + activity.user.id}" th:text="${activity.user.firstName + ' ' + activity.user.lastName}"></a>
+                    <span class="duration" th:unless="${activity.duration.hours == 0}" th:text="${'was active for ' + activity.duration.hours + ' hours and ' + activity.duration.minutes +  ' minutes'}"></span>
+                    <span class="duration" th:unless="${activity.duration.hours > 0}"th:text="${'was active for ' + activity.duration.minutes +  ' minutes'}"></span>
+                </div>
+                <div class="notes" th:text="${activity.notes}"></div>
+            </div>
+            <div class="note-wrapper">
+                <div class="type" th:text="${activity.type.name}"></div>
+                <div class="distance" th:if="${activity.distance != null}" th:text="${activity.distance + ' km'}"></div>
+            </div>
+            <div class="button-wrapper show-comments">
+                 Show/Hide comments
+            </div>
+            <div class="comment-wrapper hide">
+                <div class="comment" th:each="comment : ${activity.comments}">
+                        <div class="comment-image-container">
+                            <img class="commentImage" th:src="${'../images/' + comment.user.id + '.jpg'}">
+                        </div>
+                        <div class="text-container">
+                            <div class="comment-top">
+                                <div class="comment-name"
+                                     th:text="${comment.user.firstName + ' ' + comment.user.lastName}"></div>
+                                <div class="comment-date"
+                                     th:text="${#strings.substringBefore(comment.dateTime, 'T')}"></div>
+                            </div>
+                            <div class="comment-text" th:text="${comment.text}"></div>
+                        </div>
+                </div>
+                <form class="comment-post" action="/postComment" method="post">
+                    <input type="text" name="commentText">
+                    <input type="hidden" name="activityId" th:value="${activity.id}">
+                    <input type="submit">
+                </form>
+            </div>
+        </article>
+    </div>
+
+    <script src="../static/JS/content.js" th:src="${'/JS/content.js'}"></script>
+</div>
+</body>
+</html>
