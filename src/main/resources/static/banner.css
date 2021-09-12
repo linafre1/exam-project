@@ -1,7 +1,7 @@
 .banner {
-    height:250px;
+    height:500px;
     width:100%;
-    background:url(../images/Banner.jpg) center center no-repeat;
+    background:url(../images/Banner.jpg) top center no-repeat;
     background-size: 100% auto;
     display:flex;
     align-items:center;
@@ -9,7 +9,7 @@
     position:relative;
     overflow:hidden;
     margin: 5px 0;
-    border-bottom: 5px solid #f3a65a;
+
 }
 .banner div:first-child {
     background-color:#f3a65a;

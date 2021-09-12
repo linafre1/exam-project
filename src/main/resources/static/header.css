@@ -46,7 +46,7 @@
     background-color: white;
     color: #f3a65a;
 }
-.header .profile-link {
+/*.header .profile-link {
     display:grid;
     background-color: #f3f3f3;
     color: #f3a65a;
@@ -54,8 +54,9 @@
     border:2px solid transparent;
     border-radius:120px;
     justify-items: center;
-}
+}*/
 
+/*
  .header .profile-link div,  .header .profile-link a {
     color:#f3a65a;
     margin:0px;
@@ -67,4 +68,4 @@
   }
   .header .profile-link:hover {
     background-color: white;
-}
+}*/

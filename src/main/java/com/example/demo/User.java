@@ -24,7 +24,6 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER)
     private Map<Long, Badge> badges = new HashMap<>();
 
-
     public User () {
     }
 

@@ -20,7 +20,7 @@ public class ChallengeController {
 
     @GetMapping("/showProgress")
     public String showProgress(HttpSession session) {
-        session.setAttribute("progressMap", service.getProgressAndChallenges(1L));
+        session.setAttribute("progressMap", service.getProgressForChallenges(1L));
         return "progressBar";
     }
 

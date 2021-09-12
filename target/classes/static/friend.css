@@ -4,7 +4,7 @@
     margin: 0 auto;
     padding: 10px;
     font-size: 18px;
-     font-family:Calibri;
+    font-family:Calibri;
 }
 .friend a {
     text-decoration: none;
@@ -15,6 +15,7 @@
     border:solid 1px transparent;
     border-radius:7px;
     padding: 3px;
+    margin-bottom: 15px;
 }
 
 .friend-header {
@@ -23,7 +24,7 @@
     margin-bottom: 3px;
 }
 .friend-formatter {
-    display:grid;
+
     grid-template-columns: auto auto auto;
     justify-content:flex-start;
     align-items: center;
@@ -41,7 +42,7 @@
     display:flex;
     align-items: center;
     font-size: 18px;
-    padding:2px 5px;
+    margin-bottom:15px;
 }
 .friend-item div{
     margin: 0 2px;
@@ -52,6 +53,7 @@
     padding: 3px;
     display:grid;
     font-size: 18px;
+    margin-bottom: 15px;
 }
 
 .friend-request-header {
@@ -103,6 +105,7 @@
     display:grid;
     font-size: 18px;
     row-gap: 5px;
+    margin-bottom: 15px;
 }
 .user-header {
     font-size: 20px;

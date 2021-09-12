@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class MainService {
@@ -20,17 +21,19 @@ public class MainService {
     @Autowired
     ChallengeRepository challengeRepository;
 
+    //calls for the repository to find the activities of a user and sort them by date
     public List<Activity> getActivityList(User user) {
         List<Activity> activities = activityRepository.findByUserId(user.getId());
         Collections.sort(activities,new ActivityComparator());
         return activities;
     }
 
+    //calls for the repository to find a specific activity by id
     public Activity getActivity (Long activityId) {
         return activityRepository.findById(activityId).get();
     }
 
-    //Hämta en lista utifrån vilka vänner Usern har.
+    //collects a sorted activity-list based on the users and its friends
     public List<Activity> getActivityListWithFriends(User user) {
         List<Activity> activities = new ArrayList<>();
         if (user == null) {
@@ -44,6 +47,7 @@ public class MainService {
         return activities;
     }
 
+    //finds the type of activity, set points and saves the activity
     public void saveActivity(Activity activity, Long typeId) {
         Type activityType = typeRepository.findById(typeId).get();
         Integer points = (int)(activityType.getPoints() * activity.getDistance());
@@ -53,26 +57,43 @@ public class MainService {
 
     }
 
+    //calls the repository to find a user by its id
     public User getUser(Long id) {
         return userRepository.findById(id).get();
     }
 
+    //calls the repository to find all users in the database
     public List<User> getAllUsers() {
         return (List<User>) userRepository.findAll();
     }
 
-    public List<User> getAllUsersWithoutFriends (User user) {
-        List<User> noFriends = new ArrayList<>();
+    //calls the repository to find all the users that is not friends with the user
+    public List<User> getAllUsersExceptFriends(User user) {
+        List<User> notFriends = new ArrayList<>();
         for (User u : getAllUsers()) {
             if (user.getFriends().containsKey(u.getId()) || user.getId().equals(u.getId())) {
                 continue;
             } else {
-                noFriends.add(u);
+                notFriends.add(u);
             }
         }
-        return noFriends;
+        return notFriends;
     }
 
+    //same as above but with a stream
+    public List<User> getNotBefriendedUsers(User user) {
+        List<User> allUsers = getAllUsers();
+        List<User> notFriends = allUsers.stream()
+                .filter(u -> !user.getFriends().containsKey(u.getId()))
+                .filter(u -> !user.getId().equals(u.getId()))
+                .collect(Collectors.toList());
+        if (notFriends.isEmpty()) {
+            notFriends = new ArrayList();
+        }
+        return notFriends;
+    }
+
+    //gets a user by the username, return user or null
     public User logIn(String username, String password) {
         User user = userRepository.findByAlias(username);
         if(user != null && user.getPassword().equals(password)){
@@ -82,9 +103,11 @@ public class MainService {
         }
     }
 
+    //calls the repository to save a user
     public void saveUser(User user) {
         userRepository.save(user);
     }
+
 
     public List<Type> getTypes() {
         return (List<Type>) typeRepository.findAll();
@@ -126,15 +149,15 @@ public class MainService {
         return challengeRepository.findAllByOrderByNameAsc();
     }
 
-    public Summary getSummarybyId(Long id) {
+    public Summary getSummaryById(Long id) {
         List<Activity> activities = activityRepository.findByUserId(id);
         return getSummary(activities);
     }
 
     public Summary getSummary(List<Activity> userActivities) {
         Summary summary = new Summary();
-        int numofAct = userActivities.size();
-        summary.setActivity(numofAct);
+        int numOfAct = userActivities.size();
+        summary.setActivity(numOfAct);
 
         float totalDistance = 0;
         for (int i = 0; i < userActivities.size(); i++) {
@@ -145,8 +168,13 @@ public class MainService {
         summary.setDistance(totalDistance);
 
         Duration totalDuration = new Duration();
-        int seconds = 0; int minutes = 0; int hours = 0;
-        int restSeconds; int restMinutes;
+        int seconds = 0;
+        int minutes = 0;
+        int hours = 0;
+
+        int restSeconds;
+        int restMinutes;
+
         for (int i = 0; i < userActivities.size(); i++) {
 
             seconds += userActivities.get(i).getDuration().getSeconds();
@@ -180,7 +208,7 @@ public class MainService {
         return getSummary(activities);
     }
 
-    public Map<Challenge, Progress> getProgressAndChallenges (Long id) {
+    public Map<Challenge, Progress> getProgressForChallenges(Long id) {
         User user = userRepository.findById(id).get();
 
         List<Challenge> challenges = getAllChallenges();
@@ -233,7 +261,7 @@ public class MainService {
     }
 
     public Badge checkForBadgesAfterPostingActivity(User user, Activity activity, Long activityTypeId) {
-        Map<Challenge, Progress> challengeProgressMap = getProgressAndChallenges(user.getId());
+        Map<Challenge, Progress> challengeProgressMap = getProgressForChallenges(user.getId());
 
         for (Challenge value: challengeProgressMap.keySet()) {
             if (value.getType().getId().equals(activityTypeId)) {
