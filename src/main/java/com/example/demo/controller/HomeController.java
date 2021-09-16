@@ -52,15 +52,15 @@ public class HomeController {
         return "redirect:" + currentPage;
     }
 
-    @GetMapping("/sendFriendRequestFromHome")
+    /*@GetMapping("/sendFriendRequestFromHome")
     public String sendFriendRequest(HttpSession session, @RequestParam Long friendId) {
         User user = (User) session.getAttribute("user");
         if (user != null) {
             service.saveFriendRequest(user, friendId);
             session.setAttribute("friends", user.getFriends());
         }
-        return "redirect:/";
-    }
+        return "redirect:/home";
+    }*/
 
     @GetMapping("/friendRequest")
     public String friendList(HttpSession session, @RequestParam Long friendId, @RequestParam boolean accept) {

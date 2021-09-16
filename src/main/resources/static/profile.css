@@ -15,9 +15,9 @@
 .profile-background {
     grid-area: profile;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
     padding: 7px;
-    margin: 15px;
+    margin: 15px 15px -5px 15px;
     min-height: 600px;
 }
 

@@ -21,7 +21,7 @@ public class CommentController {
     MainService service;
 
     @PostMapping("/postComment")
-    public String acceptChallenge(HttpSession session, @RequestParam Long activityId, @RequestParam String commentText) {
+    public String postComment(HttpSession session, @RequestParam Long activityId, @RequestParam String commentText) {
         User user = (User) session.getAttribute("user");
 
         if (user != null) {

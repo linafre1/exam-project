@@ -20,10 +20,6 @@ public class ActivityController {
 
     @Autowired
     MainService service;
-    @Autowired
-    ActivityRepository activityRepository;
-    @Autowired
-    TypeRepository typeRepository;
 
     @GetMapping("/logActivity")
     public String logActivity(Model model) {
@@ -41,6 +37,8 @@ public class ActivityController {
         return "activityForm";
     }
 
+    //Gets all the information of an activity as an object, calls a method to see if a badge is claimed
+    //calls service to save the activity
     @PostMapping("/saveActivity")
     public String saveActivity (@ModelAttribute Activity activity,@RequestParam Long activityType, HttpSession session) {
         User user = (User) session.getAttribute("user");
@@ -48,12 +46,15 @@ public class ActivityController {
         activity.setUser(user);
         service.saveActivity(activity, activityType);
         String currentPage = (String) session.getAttribute("currentPage");
+
         if (badge != null) {
             session.setAttribute("gotBadge", badge);
             return "redirect:/getSummaryForUser?userId="+user.getId();
         }
+
         return "redirect:" + currentPage;
     }
+
     @GetMapping("/clearWonBadge")
         public String clearWonBadge(HttpSession session){
         session.setAttribute("gotBadge", null);
