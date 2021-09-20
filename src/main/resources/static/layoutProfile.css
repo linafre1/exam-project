@@ -283,4 +283,12 @@ h2 {
    margin-bottom:20px;
 }
 
+.main .left-side-profile {
+    background-color: white;
+    border-radius: 20px;
+    padding: 7px;
+    margin: 15px;
+    min-height: fit-content;
+}
+
 

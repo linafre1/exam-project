@@ -7,9 +7,11 @@
     grid-row-gap: 15px;
 
 }
+
 .profile-container .profile-information {
     display:grid;
     align-items: center;
+    justify-items: center;
 }
 
 .profile-background {
@@ -23,9 +25,11 @@
 
 .profile-container .information-container {
     display:grid;
-    padding:5px;
+    padding: 5px 5px 15px 5px;
     margin-left: 5px;
     align-content: center;
+    justify-items: center;
+    border-bottom: solid 1px lightgrey;
 }
 .profile-container img {
     width: 150px;
@@ -37,12 +41,11 @@
 .profile-top {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid darkgrey;
     margin-bottom: 20px;
 }
 
 .profile-middle {
-    min-height: 70px;
+    min-height: 100px;
 }
 
 .profile-container .profile-name {

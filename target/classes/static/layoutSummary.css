@@ -2,6 +2,14 @@ body {
     margin: 0;
     font-family: sans-serif;
     background-color: #afd5d91f;
+    font-size: 20px;
+}
+
+@media (max-width: 800px) {
+    .left-side-profile {
+        min-width: 300px;
+    }
+
 }
 
 * {
@@ -45,7 +53,6 @@ a {
     width: auto;
     padding: 7px;
     margin: 15px;
-    background-color: white;
     border-radius: 20px;
     min-height: 600px;
     grid-area: content;

@@ -32,10 +32,14 @@
 
 <div class="centered">
     <div class="main">
-        <div class="profile" th:replace="profileFragment :: profileFragment" ></div>
-        <div class="challenges" th:replace="challengeFragment :: challengeFragmentProgress" ></div>
-        <div class="content" th:replace="contentFragment :: contentFragment">Content</div>
-        <div class="friend" th:replace="badgesFragment :: badgesFragment"></div>
+        <div class="left-side-profile">
+            <div class="profile" th:replace="profileFragment :: profileFragment"></div>
+            <div class="friend" th:replace="badgesFragment :: badgesFragment"></div>
+        </div>
+        <div class="right-side-profile">
+            <div class="challenges" th:replace="challengeFragment :: challengeFragmentProgress" ></div>
+            <div class="content" th:replace="contentFragment :: contentFragment">Content</div>
+        </div>
     </div>
 </div>
 <script src="../static/JS/challenge.js" th:src="${'/JS/challenge.js'}"></script>

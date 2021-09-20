@@ -29,10 +29,15 @@
 
 <div class="centered">
     <div class="main">
-        <div th:replace="profileFragment :: profileFragment"></div>
-        <div class="badges" th:replace="badgesFragment :: badgesFragment"></div>
-        <div class="friend" th:replace="friendFragment :: friendFragment"></div>
-        <div class="content" th:replace="contentFragment :: contentFragment">Content</div>
+        <div class="left-side-profile">
+            <div th:replace="profileFragment :: profileFragment"></div>
+            <div class="badges" th:replace="badgesFragment :: badgesFragment"></div>
+        </div>
+        <div class="right-side-profile">
+            <div class="friend" th:replace="friendFragment :: friendFragment"></div>
+            <div class="content" th:replace="contentFragment :: contentFragment">Content</div>
+        </div>
+
     </div>
 </div>
 

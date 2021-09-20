@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: sans-serif;
     background-color: #afd5d91f;
+    font-size: 20px;
 }
 
 * {
@@ -105,6 +106,7 @@ ul {
 li {
     font-size: 20px;
     list-style:none;
+    line-height: 20px;
 
 }
 h1, h3, h2 {

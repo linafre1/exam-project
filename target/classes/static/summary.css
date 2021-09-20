@@ -3,6 +3,13 @@
     justify-content: space-around;
 }
 
+@media (max-width: 800px) {
+    .profile-container {
+        display: grid;
+    }
+
+}
+
 .profile-container .summary .small-header{
     font-size: 12px;
     margin-bottom:2px;
