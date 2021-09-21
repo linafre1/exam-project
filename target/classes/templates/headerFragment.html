@@ -13,7 +13,7 @@
                 <!-- <img id="logo" src="../images/activly.png" alt="Activly logo">-->
             </div>
         </a>
-        <div th:if="${session.isLoggedIn}">
+        <div th:if="${session.isLoggedIn}" class="show-menu">
             <ul>
                 <li class="home"><a href="/home">Home</a></li>
                 <li class="home"><a href="/logActivity">Log Activity</a></li>
@@ -23,7 +23,7 @@
                 <li id="logout"><a href="/logout">Log out</a></li>
             </ul>
         </div>
-        <div th:if="!${session.isLoggedIn}">
+        <div th:if="!${session.isLoggedIn}" class="show-menu">
             <ul>
                 <li id="signup"><a href="/signup">Sign up</a></li>
                 <li id="login"><a href="/login">Log in</a></li>
@@ -31,6 +31,36 @@
             </ul>
         </div>
     </div>
+    <div class="hamburger">
+        <img id="hamburger" src="../images/hamburgerWhite.png"/>
+    </div>
+    <div class="overlay hide">
+        <div class="hamburger-wrapper">
+            <img class="close" src="../images/icon-gray-x.png"/>
+            <div class="hamburger-menu">
+                <div th:if="${session.isLoggedIn}">
+                    <ul>
+                        <li class="home"><a href="/home">Home</a></li>
+                        <li class="home"><a href="/logActivity">Log Activity</a></li>
+                        <li class="profile-link">
+                            <a th:href="${'/getSummaryForUser?userId=' + session.user.id}" th:text="${session.user.firstName + ' ' + session.user.lastName}"></a>
+                        </li>
+                        <li id="hamburger-logout"><a href="/logout">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+                <div th:if="!${session.isLoggedIn}">
+                    <ul>
+                        <li id="hamburger-signup"><a href="/signup">Sign up</a></li>
+                        <li id="hamburger-login"><a href="/login">Log in</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/JS/header.js" th:src="${'/JS/header.js'}"></script>
 </div>
 </body>
 </html>

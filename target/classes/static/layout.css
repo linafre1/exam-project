@@ -50,16 +50,20 @@ a {
     padding: 15px 5px;
     border-radius: 20px;
     border: solid 1px #f3a65a;
-    color: #f3a65a;
+    background-color: #f3a65a;
     font-size: 26px;
     display: flex;
     justify-content: center;
     cursor: pointer;
 }
+
+.activity-log a {
+    color: white;
+}
+
 .activity-log:hover {
-  border: solid 1px #ffffff;
   color: white;
-  background-color: #f3a65a;
+  background-color: #f3a65a; opacity: 0.8;
 }
 
 .content {
