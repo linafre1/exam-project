@@ -1,10 +1,10 @@
 .friend {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 10px;
-    font-size: 18px;
-    font-family:Calibri;
+    border:solid 1px transparent;
+    border-radius:7px;
+    padding: 3px;
+    display:grid;
+    margin-bottom: 15px;
+
 }
 .friend a {
     text-decoration: none;
@@ -19,7 +19,6 @@
 }
 
 .friend-header {
-    font-size: 20px;
     border-bottom: solid 1px #cacaca;
     margin-bottom: 3px;
 }
@@ -41,9 +40,13 @@
 .friend-item {
     display:flex;
     align-items: center;
-    font-size: 18px;
     margin-bottom:15px;
 }
+
+.friend-item:first-child {
+    margin-top: 10px;
+}
+
 .friend-item div{
     margin: 0 2px;
 }
@@ -52,8 +55,8 @@
     border-radius:7px;
     padding: 3px;
     display:grid;
-    font-size: 18px;
     margin-bottom: 15px;
+
 }
 
 .friend-request-header {
@@ -120,4 +123,8 @@
     /* margin-left:10px; */
     margin-bottom: 4px;
     grid-gap: 10px 10px;
+}
+
+.user-formatter:first-child {
+    margin-top: 10px;
 }

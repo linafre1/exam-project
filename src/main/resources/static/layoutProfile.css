@@ -1,6 +1,8 @@
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Montserrat';
+    background-color: #fdf7f1;;
+    font-size: 20px;
 }
 
 * {
@@ -149,19 +151,17 @@ ul {
 }
 
 li {
-
+    font-size: 20px;
     list-style:none;
-
+    line-height: 20px;
 }
 h1, h3 {
     font-family: 'Orbitron', sans-serif;
 }
 
 h2 {
-
     color: #242628;
-    font-family: sans-serif;
-    /*font-family: "Roboto Light";*/
+
     font-size: 30px;
 
 }

@@ -18,6 +18,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>Document</title>
 
 </head>
@@ -37,12 +40,17 @@
 
     </div>
     <div class="main">
-        <div class="side" th:replace="sideFragment :: sideFragment">
-        </div >
-        <div th:replace="challengeFragment :: challengeFragment  "></div>
-        <div class="content" th:replace="contentFragment :: contentFragment">
-        Content
+        <div class="home-challenge">
+            <div th:replace="challengeFragment :: challengeFragment  "></div>
         </div>
+        <div class="home">
+            <div class="side" th:replace="sideFragment :: sideFragment">
+            </div >
+            <div class="content" th:replace="contentFragment :: contentFragment">
+                Content
+            </div>
+        </div>
+
         <!--<div class="right-side" >
             Side container for upcoming events, or ads
         </div >-->

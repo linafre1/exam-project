@@ -7,8 +7,10 @@
 </head>
 <body>
 <div class="side" th:fragment="sideFragment">
-    <div class="activity-log"><a href="/logActivity">Log activity</a></div>
-    <div class="friend" th:replace="friendFragment :: friendFragment"></div>
+    <div class="social">
+        <div class="friend" th:replace="friendFragment :: friendFragment"></div>
+        <div class="activity-log"><a href="/logActivity">Log activity</a></div>
+    </div>
     </div>
 </body>
 </html>

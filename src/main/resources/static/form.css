@@ -2,6 +2,7 @@
     display:grid;
     justify-content: center;
     grid-template-columns: '.';
+    justify-items: center;
 }
 
 .form form {

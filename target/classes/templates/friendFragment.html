@@ -9,7 +9,7 @@
 <div class="friend" th:fragment="friendFragment">
     <h3 class="component-header">Social Panel</h3>
     <div class="friends">
-        <div class="friend-header">Friends</div>
+        <h4 class="friend-header">Friends</h4>
         <div class="friend-formatter">
             <div class="friend-item" th:each="user : ${session.user?.friends?.values()}">
                 <div class="friend-image"></div>
@@ -17,8 +17,8 @@
             </div>
         </div>
     </div>
-    <div class="friend-requests">
-        <div class="friend-request-header">Friend Requests</div>
+    <div class="friend">
+        <h4 class="friend-header">Friend Requests</h4>
         <div class="friend-request-formatter" th:each="user : ${session.user?.friendRequests?.values()}">
             <div class="friend-image"></div>
             <div><a th:href="${'/getSummaryForUser?userId=' + user.id}" th:text="${user.firstName + ' ' + user.lastName}">Friend1</a></div>
@@ -26,8 +26,8 @@
             <div class="no"><a th:href="${'/friendRequest?friendId=' + user.id + '&accept=false'}" th:text="${'Decline'}"></a></div>
         </div>
     </div>
-    <div class="all-users">
-        <div class="user-header">Users</div>
+    <div class="friend">
+        <h4 class="friend-header">Users</h4>
         <div class="user-formatter" th:each="user : ${session.allUsers}">
             <div class="friend-image"></div>
             <div><a th:href="${'/getSummaryForUser?userId=' + user.id}" th:text="${user.firstName + ' ' + user.lastName}">Friend1</a></div>

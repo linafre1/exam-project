@@ -1,7 +1,6 @@
 body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #afd5d91f;
+    font-family: 'Montserrat';
+    background-color: #fdf7f1;
     font-size: 20px;
 }
 
@@ -42,9 +41,18 @@ a {
     grid-area: side;
     padding: 10px 5px;
     margin: 15px;
+}
+
+.social {
+    width: auto;
+    height: auto;
     background-color: white;
     border-radius: 20px;
+    min-height: 800px;
+    margin: 30px 0px;
+    padding: 10px;
 }
+
 .activity-log {
     margin: 15px;
     padding: 15px 5px;
@@ -79,13 +87,16 @@ a {
 }
 
 .main {
-    display: grid;
-    grid-template-areas: "side challenges challenges"
-                          "side content content"
-                          "side content content";
+    display: flex;
+    flex-direction: column;
 
 }
-
+.home {
+    display: grid;
+    grid-template-areas:
+        "side content content"
+        "side content content";
+}
 @media (max-width: 800px) {
     .menu {
         display: none;
@@ -181,13 +192,16 @@ transform: scale(1.03);
 transform: scale(1.03);
 }
 
-.label {
+/*.label {
     font-family: sans-serif;
-}
+}*/
 
 .input-window {
-    border-radius: 8px;
-    height: 30px;
+    border-radius: 20px;
+    height: fit-content;
+    margin-top: 3%;
+    padding: 3%;
+    font-size: 25px;
 }
 
 .submit-button {
@@ -205,4 +219,20 @@ transform: scale(1.03);
 .submit-button:hover {
 transform: scale(1.03);
 }
+
+h4 {
+    font-size: 25px;
+}
+
+.challenges-outer-wrapper {
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    justify-self: center;
+    /*background-color: white;*/
+    padding: 5px;
+    border-radius: 20px;
+}
+
 
