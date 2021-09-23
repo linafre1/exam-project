@@ -2,7 +2,6 @@ const openHamburgerMenu = document.querySelector(".header .hamburger #hamburger"
 const closeHamburgerMenu = document.querySelector(".overlay .hamburger-wrapper .close")
 
 openHamburgerMenu.onclick = () => {
-    console.log("klick");
     document.querySelector(".overlay").classList.remove("hide");
 }
 
